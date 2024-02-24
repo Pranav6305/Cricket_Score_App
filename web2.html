@@ -11,37 +11,40 @@
             width: 300px;
             text-align: center;
         }
-        input{
-            text-align: center; 
-            padding:5px; 
-            font-size:15px;
+
+        input {
+            text-align: center;
+            padding: 5px;
+            font-size: 15px;
         }
-        .se{
-            padding:5px;
-            width:100px;
+
+        .se {
+            padding: 5px;
+            width: 100px;
         }
     </style>
 
 <body style="background-color: cyan;">
     <center>
         <br><br><br>
+
         <div id="match">
             <h1>Match Between</h1>
             <form>
                 <tr>
                     <td>
-                        <input type="type" placeholder="Team 1">
+                        <input type="type" placeholder="Team 1" id="t1">
                     </td>
                     <h1>VS</h1>
                     <td>
-                        <input type="type" placeholder="Team 2">
+                        <input type="type" placeholder="Team 2" id="t2">
                     </td>
                     <br>
                     <td>
                         <h1>Toss won by</h1>
-                        <input type="type" placeholder="Team who won the toss">
+                        <input type="type" placeholder="Team who won the toss" id="toss">
                         <h1>elected to</h1>
-                        <select class="se">
+                        <select class="se" id="select">
                             <option>Select</option>
                             <option>Batting</option>
                             <option>Bowling</option>
@@ -50,8 +53,25 @@
                 </tr>
             </form>
             <br>
-            <button type="button" style="padding:5px;width: 100px;">Proceed</button>
+            <button type="button" style="padding:5px;width: 100px;" onclick="proceed()">Proceed</button>
         </div>
+
+        <script>
+            function proceed() {
+                var t1 = document.getElementById("t1").value;
+                var t2 = document.getElementById("t2").value;
+                var toss = document.getElementById("toss").value;
+                var select = document.getElementById("select").value;
+
+                if (t1 !== "" && t2 !== "" && toss !== "" && select !== "Select" && (toss===t1 || toss===t2)) {
+                    alert("Completed");
+                } 
+                else {
+                    alert("Fill in all the details");
+                }
+            }
+        </script>
+
         <br>
     </center>
 </body>
