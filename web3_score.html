@@ -10,10 +10,10 @@
         }
         .board{
             background-color: orange;
-            border: 1px solid black;
-            padding: 5px;
+            border: 2px solid black;
+            padding: 2px;
             border-radius: 10px;
-            width:100px;
+            width:200px;
         }
         .button{
             border: 1px solid black;
@@ -25,10 +25,15 @@
     </style>
 <body style="background-color: lightgreen;">
     <center>
-        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
         <div id="scorebox">
             <h1>Score</h1>
-            <h1 id="runs" class="board">0</h1>
+            <div class="board">
+                <h1>Runs:<h1 id="runs">0</h1></h1>
+                <hr style="border: 2px solid black;">
+                <h1>Wickets:<h1 id="wicket">0</h1></h1>
+            </div>
+            <br>
             <button type="button" onclick="score(0)" class="button">0</button>
             <button type="button" onclick="score(1)" class="button" style="background-color: pink;">1</button>
             <button type="button" onclick="score(2)" class="button" style="background-color: lightsalmon;">2</button>
@@ -37,8 +42,9 @@
             <button type="button" onclick="score(4)" class="button" style="background-color: blue;">4</button>
             <button type="button" onclick="score(5)" class="button" style="background-color: whitesmoke;">5</button>
             <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
+            <button type="button" onclick="score(-1)" class="button" style="background-color: lightgray;">W</button>
             <script>
-                var one = 0, two = 0,three=0,four=0,five=0,six=0;
+                var one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
                 function score(value) {
                     if (value===1){
                         one = one + 1;
@@ -63,6 +69,15 @@
                     else if(value===6){
                         six=six+6;
                         document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===-1){
+                        wicket=wicket+1;
+                        if (wicket<10){
+                            document.getElementById("wicket").innerHTML = wicket;
+                        }
+                        else{
+                            document.getElementById("wicket").innerHTML = "All Out";
+                        }
                     } 
                 }
             </script>
