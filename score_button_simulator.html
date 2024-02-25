@@ -1,0 +1,73 @@
+<html>
+<head>
+    <style>
+        #scorebox{
+            background-color: yellow;
+            border: 2px solid black;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+        }
+        .board{
+            background-color: orange;
+            border: 1px solid black;
+            padding: 5px;
+            border-radius: 10px;
+            width:100px;
+        }
+        .button{
+            border: 1px solid black;
+            padding: 15px;
+            width:50px;
+            text-align: center;
+            font-size: 25px;
+        }
+    </style>
+<body style="background-color: lightgreen;">
+    <center>
+        <br><br><br><br><br><br><br><br><br>
+        <div id="scorebox">
+            <h1>Score</h1>
+            <h1 id="runs" class="board">0</h1>
+            <button type="button" onclick="score(0)" class="button">0</button>
+            <button type="button" onclick="score(1)" class="button" style="background-color: pink;">1</button>
+            <button type="button" onclick="score(2)" class="button" style="background-color: lightsalmon;">2</button>
+            <button type="button" onclick="score(3)" class="button" style="background-color: lightseagreen;">3</button>
+            <br><br>
+            <button type="button" onclick="score(4)" class="button" style="background-color: blue;">4</button>
+            <button type="button" onclick="score(5)" class="button" style="background-color: whitesmoke;">5</button>
+            <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
+            <script>
+                var one = 0, two = 0,three=0,four=0,five=0,six=0;
+                function score(value) {
+                    if (value===1){
+                        one = one + 1;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===2){
+                        two=two+2;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===3){
+                        three=three+3;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===4){
+                        four=four+4;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===5){
+                        five=five+5;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    }
+                    else if(value===6){
+                        six=six+6;
+                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                    } 
+                }
+            </script>
+        </div>
+    </center>
+</body>
+</head>
+</html>
