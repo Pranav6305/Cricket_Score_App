@@ -2,14 +2,14 @@
 <head>
     <style>
         #scorebox{
-            background-color: yellow;
+            background-color: lightblue;
             border: 2px solid black;
             padding: 20px;
             border-radius: 15px;
             width: 300px;
         }
         .board{
-            background-color: orange;
+            background-color: lightgreen;
             border: 2px solid black;
             padding: 2px;
             border-radius: 10px;
@@ -23,7 +23,7 @@
             font-size: 25px;
         }
     </style>
-<body style="background-color: lightgreen;">
+<body style="background-color: lightcoral;">
     <center>
         <br><br><br><br><br>
         <div id="scorebox">
@@ -44,31 +44,35 @@
             <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
             <button type="button" onclick="score(-1)" class="button" style="background-color: lightgray;">W</button>
             <script>
-                var one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
+                var zero=0,one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
                 function score(value) {
+                    if (value===0){
+                        zero = zero + 1;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                    }
                     if (value===1){
                         one = one + 1;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===2){
                         two=two+2;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===3){
                         three=three+3;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===4){
                         four=four+4;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===5){
                         five=five+5;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===6){
                         six=six+6;
-                        document.getElementById("runs").innerHTML = one+two+three+four+five+six;
+                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
                     }
                     else if(value===-1){
                         wicket=wicket+1;
