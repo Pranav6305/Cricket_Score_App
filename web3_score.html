@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <style>
@@ -23,6 +24,7 @@
             font-size: 25px;
         }
     </style>
+</head>
 <body style="background-color: lightcoral;">
     <center>
         <br><br><br><br><br>
@@ -43,50 +45,52 @@
             <button type="button" onclick="score(5)" class="button" style="background-color: whitesmoke;">5</button>
             <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
             <button type="button" onclick="score(-1)" class="button" style="background-color: lightgray;">W</button>
-            <script>
-                var zero=0,one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
-                function score(value) {
-                    if (value===0){
-                        zero = zero + 1;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    if (value===1){
-                        one = one + 1;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===2){
-                        two=two+2;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===3){
-                        three=three+3;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===4){
-                        four=four+4;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===5){
-                        five=five+5;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===6){
-                        six=six+6;
-                        document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
-                    }
-                    else if(value===-1){
-                        wicket=wicket+1;
-                        if (wicket<10){
-                            document.getElementById("wicket").innerHTML = wicket;
-                        }
-                        else{
-                            document.getElementById("wicket").innerHTML = "All Out";
-                        }
-                    } 
-                }
-            </script>
         </div>
     </center>
+
+    <script>
+        var zero=0,one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
+        function score(value) {
+            if (value === 0){
+                zero = zero + 1;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            if (value === 1){
+                one = one + 1;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === 2){
+                two = two + 2;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === 3){
+                three = three + 3;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === 4){
+                four = four + 4;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === 5){
+                five = five + 5;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === 6){
+                six = six + 6;
+                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            }
+            else if(value === -1){
+                wicket = wicket + 1;
+                if (wicket < 10){
+                    document.getElementById("wicket").innerHTML = wicket;
+                }
+                else{
+                    document.getElementById("wicket").innerHTML = "All Out";
+                }
+                // Sending wicket information to the server
+                socket.send("Wicket " + wicket);
+            } 
+        }
+    </script>
 </body>
-</head>
 </html>
