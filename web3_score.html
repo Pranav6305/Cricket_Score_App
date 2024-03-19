@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
-        #scorebox{
+        #scorebox {
             background-color: lightblue;
             border: 2px solid black;
             padding: 20px;
             border-radius: 15px;
             width: 300px;
         }
-        .board{
+
+        .board {
             background-color: lightgreen;
             border: 2px solid black;
             padding: 2px;
             border-radius: 10px;
-            width:200px;
+            width: 200px;
         }
-        .button{
+
+        .button {
             border: 1px solid black;
             padding: 15px;
-            width:50px;
+            width: 50px;
             text-align: center;
             font-size: 25px;
         }
     </style>
 </head>
+
 <body style="background-color: lightcoral;">
     <center>
-        <br><br><br><br><br>
+        <br><br>
         <div id="scorebox">
             <h1>Score</h1>
             <div class="board">
-                <h1>Runs:<h1 id="runs">0</h1></h1>
+                <h1>Runs:<h1 id="runs">0</h1>
+                </h1>
                 <hr style="border: 2px solid black;">
-                <h1>Wickets:<h1 id="wicket">0</h1></h1>
+                <h1>Wickets:<h1 id="wicket">0</h1>
+                </h1>
             </div>
             <br>
             <button type="button" onclick="score(0)" class="button">0</button>
@@ -45,50 +51,85 @@
             <button type="button" onclick="score(5)" class="button" style="background-color: whitesmoke;">5</button>
             <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
             <button type="button" onclick="score(-1)" class="button" style="background-color: lightgray;">W</button>
+            <br><br>
+            <button type="button" onclick="score(-2)" class="button" style="background-color: lightgray;">wd</button>
+            <button type="button" onclick="score(-3)" class="button" style="background-color: lightgray;">nb</button>
+            <h1 id="final_score"></h1>
+            <h1 id="target"></h1>
         </div>
     </center>
 
     <script>
-        var zero=0,one = 0, two = 0,three=0,four=0,five=0,six=0,wicket=0;
+        var zero = 0, one = 0, two = 0, three = 0, four = 0, five = 0, six = 0,extras=0,wide=0,nb=0, wicket = 0, runs = 0;
         function score(value) {
-            if (value === 0){
-                zero = zero + 1;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+            if (value === 0) {
+                zero = zero + 0;
+                runs = runs + zero;
+                document.getElementById("runs").innerHTML = runs;
             }
-            if (value === 1){
+            if (value === 1) {
                 one = one + 1;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + one;
+                document.getElementById("runs").innerHTML = runs;
+                one = 0;
             }
-            else if(value === 2){
+            else if (value === 2) {
                 two = two + 2;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + two;
+                document.getElementById("runs").innerHTML = runs;
+                two = 0;
             }
-            else if(value === 3){
+            else if (value === 3) {
                 three = three + 3;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + three;
+                document.getElementById("runs").innerHTML = runs;
+                three = 0;
             }
-            else if(value === 4){
+            else if (value === 4) {
                 four = four + 4;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + four;
+                document.getElementById("runs").innerHTML = runs;
+                four = 0;
             }
-            else if(value === 5){
+            else if (value === 5) {
                 five = five + 5;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + five;
+                document.getElementById("runs").innerHTML = runs;
+                five = 0;
             }
-            else if(value === 6){
+            else if (value === 6) {
                 six = six + 6;
-                document.getElementById("runs").innerHTML = zero+one+two+three+four+five+six;
+                runs = runs + six;
+                document.getElementById("runs").innerHTML = runs;
+                six = 0;
             }
-            else if(value === -1){
+            else if (value === -2) {
+                wide = wide + 1;
+                runs = runs + wide;
+                extras=extras+wide;
+                document.getElementById("runs").innerHTML = runs;
+                wide = 0;
+            }
+            else if (value === -3) {
+                nb = nb + 1;
+                runs = runs + nb;
+                extras=extras+nb;
+                document.getElementById("runs").innerHTML = runs;
+                nb = 0;
+            }
+            else if (value === -1) {
                 wicket = wicket + 1;
-                if (wicket < 10){
+                if (wicket < 10) {
                     document.getElementById("wicket").innerHTML = wicket;
                 }
-                else{
+                else {
                     document.getElementById("wicket").innerHTML = "All Out";
+                    document.getElementById("final_score").innerHTML = "Total:" + runs;
+                    document.getElementById("target").innerHTML = "Target:" + (runs + 1);
                 }
-            } 
+            }
         }
     </script>
 </body>
+
 </html>
