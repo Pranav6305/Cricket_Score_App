@@ -2,44 +2,23 @@
 <html>
 
 <head>
-    <style>
-        #scorebox {
-            background-color: lightblue;
-            border: 2px solid black;
-            padding: 20px;
-            /* padding-right: 400px; */
-            border-radius: 15px;
-            width: 300px;
-        }
-
-        .board {
-            background-color: lightcoral;
-            border: 2px solid black;
-            padding: 3px;
-            border-radius: 5px;
-            width: 150px;
-        }
-
-        .button {
-            border: 1px solid black;
-            padding: 15px;
-            width: 50px;
-            text-align: center;
-            font-size: 25px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles2.css">
 </head>
 
 <body style="background-color: lightgreen;">
     <center>
+        <br><br><br><br><br>
         <div id="scorebox">
             <h1>Score: 1st innings</h1>
+            <br><br><br><br>
             <div class="board">
-                <pre>
-                <h1>Runs:<h1 id="runs">0</h1></h1><hr style="border: 2px solid black;"><h1>Wickets:<h1 id="wicket">0</h1></h1><hr style="border: 2px solid black;"><h1>Overs:<h1 id="Overs">0</h1></h1>
-                </pre>
+                <span>
+                    <h1></h1><h1 id="runs">0 </h1><h1> - </h1><h1 id="wicket">0</h1>
+                    <hr style="border: 2px solid black;">
+                    <h1>Over:  </h1><h1 id="Overs">0</h1>
+                </span>
             </div>
-            <br>
+            <br><br><br>
             <button type="button" onclick="score(0)" class="button">0</button>
             <button type="button" onclick="score(1)" class="button" style="background-color: pink;">1</button>
             <button type="button" onclick="score(2)" class="button" style="background-color: lightsalmon;">2</button>

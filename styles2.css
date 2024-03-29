@@ -1,0 +1,33 @@
+#scorebox {
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+}
+
+.board {
+    background-color: lightcoral;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 5px;
+    width: 170px;
+}
+
+.button {
+    border: 1px solid black;
+    padding: 15px;
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+span{
+    display:inline-block;
+    vertical-align: top;
+}
+
+h1{
+    display:inline;
+    margin:0;
+}
