@@ -11,6 +11,7 @@
         <div id="scorebox">
             <h1>Score: 1st innings</h1>
             <br><br><br><br>
+
             <div class="board">
                 <span>
                     <h1></h1><h1 id="runs">0 </h1><h1> - </h1><h1 id="wicket">0</h1>
@@ -18,7 +19,8 @@
                     <h1>Over:  </h1><h1 id="Overs">0</h1>
                 </span>
             </div>
-            <br><br><br>
+            
+            <br><br>
             <button type="button" onclick="score(0)" class="button">0</button>
             <button type="button" onclick="score(1)" class="button" style="background-color: pink;">1</button>
             <button type="button" onclick="score(2)" class="button" style="background-color: lightsalmon;">2</button>
@@ -28,18 +30,41 @@
             <button type="button" onclick="score(5)" class="button" style="background-color: whitesmoke;">5</button>
             <button type="button" onclick="score(6)" class="button" style="background-color: red;">6</button>
             <button type="button" onclick="wicket(-1)" class="button" style="background-color: lightgray;">W</button>
-            <br>
+            <br><br><br>
+
+            <div>
+                <span id="batscore">Batsmen1: <span id="st"><strong>0</strong></span></span>
+                <span id="batscore">Batsmen2: <span id="nst"><strong>0</strong></span></span>
+            </div>
         </div>
     </center>
 
     <script>
-        var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0;
+        var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0 , st=0,flag=0,nst=0;
         function score(value) {
             if (balls === 5) {
                 if (wickets === 10) {
                     runs = total;
                 }
                 else {
+                    if (flag==0){
+                        if (value%2===1){
+                            flag=0;
+                        }
+                        else{
+                            flag=1;
+                        }
+                        st+=value;
+                    }
+                    else{
+                        if (value%2===1){
+                            flag=1;
+                        }
+                        else{
+                            flag=0;
+                        }
+                        nst+=value;
+                    }
                     runs += value;
                     total = runs;
                     balls = (balls + 1) % 6;
@@ -51,6 +76,24 @@
                     runs = total;
                 }
                 else {
+                    if (flag==0){
+                        if (value%2===0){
+                            flag=0;
+                        }
+                        else{
+                            flag=1;
+                        }
+                        st+=value;
+                    }
+                    else{
+                        if (value%2===0){
+                            flag=1;
+                        }
+                        else{
+                            flag=0;
+                        }
+                        nst+=value; 
+                    }
                     runs += value;
                     total = runs;
                     balls = (balls + 1) % 6;
@@ -58,6 +101,8 @@
             }
             document.getElementById("runs").innerHTML = total;
             document.getElementById("Overs").innerHTML = overs + "." + balls;
+            document.getElementById("st").innerHTML=st;
+            document.getElementById("nst").innerHTML=nst;
         }
         function wicket(out) {
             if (out === -1 && wickets != 10) {

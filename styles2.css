@@ -3,7 +3,7 @@
     border: 2px solid black;
     padding: 20px;
     border-radius: 15px;
-    width: 300px;
+    width: 400px;
 }
 
 .board {
@@ -11,7 +11,7 @@
     border: 2px solid black;
     padding: 3px;
     border-radius: 5px;
-    width: 170px;
+    width: 200px;
 }
 
 .button {
@@ -30,4 +30,13 @@ span{
 h1{
     display:inline;
     margin:0;
+}
+
+#batscore{
+    background-color: orange;
+    border: 2px solid black;
+    height: 30px;
+    width: 150px;
+    padding: 5px;
+    font-size: 17px;
 }
