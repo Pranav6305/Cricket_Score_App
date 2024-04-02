@@ -17,6 +17,11 @@
                         <input type="type" placeholder="Team 2" id="t2">
                     </td>
                     <br>
+                    <h1>Overs</h1>
+                    <td>
+                        <input type="text" placeholder="No. of overs" id="over">
+                    </td>
+                    <br>
                     <td>
                         <h1>Toss won by</h1>
                         <input type="type" placeholder="Team who won the toss" id="toss">
@@ -39,9 +44,25 @@
                 var t2 = document.getElementById("t2").value;
                 var toss = document.getElementById("toss").value;
                 var select = document.getElementById("select").value;
+                var over=document.getElementById("over").value;
 
-                if ((t1 !== "" && t2 !== "" && toss !== "" && select !== "Select" && (toss === t1 || toss === t2))) {
-                    window.location.href = "web3_score.html";
+                if ((t1 !== "" && t2 !== "" && over!="" && toss !== "" && select !== "Select" && (toss === t1 || toss === t2))) {
+                    localStorage.setItem('overs',over);
+                    localStorage.setItem('team1',t1);
+                    localStorage.setItem('team2',t2);
+                    window.location.href = "web2_1.html";
+                    if (toss===t1 && select==="Batting"){
+                        localStorage.setItem('bat',t1);
+                    }
+                    else if (toss===t1 && select==="Bowling"){
+                        localStorage.setItem('bat',t2);
+                    }
+                    else if (toss===t2 && select==="Batting"){
+                        localStorage.setItem('bat',t2);
+                    }
+                    else{
+                        localStorage.setItem('bat',t1);
+                    }
                 }
                 else {
                     alert("Fill in all the details");

@@ -29,7 +29,7 @@ span{
 
 h1{
     display:inline;
-    margin:0;
+    margin:0; 
 }
 
 #batscore{
@@ -40,4 +40,12 @@ h1{
     padding: 5px;
     padding-top: 15px;
     font-size: 17px;
+}
+
+#bteam{
+    background-color: yellow;
+    border: 2px solid black;
+    height: 30px;
+    width: 60px;
+    padding: 5px 15px 5px 15px;
 }
