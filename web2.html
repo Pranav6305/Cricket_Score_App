@@ -2,7 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="styles1.css">
-<body>
+<body id="body">
     <center>
         <br>
         <div id="match">
@@ -44,24 +44,24 @@
                 var t2 = document.getElementById("t2").value;
                 var toss = document.getElementById("toss").value;
                 var select = document.getElementById("select").value;
-                var over=document.getElementById("over").value;
+                var over = document.getElementById("over").value;
 
-                if ((t1 !== "" && t2 !== "" && over!="" && toss !== "" && select !== "Select" && (toss === t1 || toss === t2))) {
-                    localStorage.setItem('overs',over);
-                    localStorage.setItem('team1',t1);
-                    localStorage.setItem('team2',t2);
+                if ((t1 !== "" && t2 !== "" && over != "" && toss !== "" && select !== "Select" && (toss === t1 || toss === t2))) {
+                    localStorage.setItem('overs', over);
+                    localStorage.setItem('team1', t1);
+                    localStorage.setItem('team2', t2);
                     window.location.href = "web2_1.html";
-                    if (toss===t1 && select==="Batting"){
-                        localStorage.setItem('bat',t1);
+                    if (toss === t1 && select === "Batting") {
+                        localStorage.setItem('bat', t1);
                     }
-                    else if (toss===t1 && select==="Bowling"){
-                        localStorage.setItem('bat',t2);
+                    else if (toss === t1 && select === "Bowling") {
+                        localStorage.setItem('bat', t2);
                     }
-                    else if (toss===t2 && select==="Batting"){
-                        localStorage.setItem('bat',t2);
+                    else if (toss === t2 && select === "Batting") {
+                        localStorage.setItem('bat', t2);
                     }
-                    else{
-                        localStorage.setItem('bat',t1);
+                    else {
+                        localStorage.setItem('bat', t1);
                     }
                 }
                 else {
