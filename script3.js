@@ -2,6 +2,7 @@ var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0, st = 0, flag = 0, ns
 var bat_team = localStorage.getItem('bat');
 document.getElementById("bteam").textContent = bat_team;
 
+
 function score(value) {
     if (balls === 5) {
         if (wickets === 10) {
