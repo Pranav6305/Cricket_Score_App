@@ -224,12 +224,10 @@ function noballPopup() {
         if (flag === 0) {
             st+=nb;
             stb+=1;
-            flag = 1;
         } 
         else {
             nst+=nb;
             nstb+=1;
-            flag = 0;
         }
         nb=nb+1;
         runs += nb;
@@ -277,11 +275,9 @@ function byesPopup() {
     if (byes % 2 == 0) {
         if (flag === 0) {
             stb+=1;
-            flag = 1;
         } 
         else {
             nstb+=1;
-            flag = 0;
         }
         runs += byes;
         total = runs;
@@ -321,11 +317,9 @@ function legbyesPopup() {
     if (lbyes % 2 == 0) {
         if (flag === 0) {
             stb+=1;
-            flag = 1;
         } 
         else {
             nstb+=1;
-            flag = 0;
         }
         runs += lbyes;
         total = runs;
