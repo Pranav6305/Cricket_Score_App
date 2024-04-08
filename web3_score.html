@@ -49,7 +49,7 @@
             <br><br>
             <!-- Extras -->
             <button type="button" onclick="openPopup()" class="button" style="background-color: darkkhaki;">wd</button>
-            <button type="button" class="button" style="background-color: darkkhaki;">nb</button>
+            <button type="button" onclick="openPopupn()" class="button" style="background-color: darkkhaki;">nb</button>
             <button type="button" class="button" style="background-color: darkkhaki;">lb</button>
             <button type="button" class="button" style="background-color: darkkhaki;">by</button>
             <br><br>
@@ -68,6 +68,23 @@
                 <button onclick="closePopup()">proceed</button>
             </div>
             <div id="overlay" class="overlay"></div>
+
+            <div id="popupn" class="popupn">
+                <form>
+                    <tr>
+                        <h1>No Ball!!</h1>
+                        <h1>Free Hit!!</h1>
+                        <br><br>
+                        <td>
+                            <input type="text" placeholder="Runs:" id="n" style="width:80px;height:50px;text-align: center;">
+                        </td>
+                    </tr>
+                </form>
+                <br>
+                <button onclick="noballPopup()">proceed</button>
+            </div>
+            <div id="overlayn" class="overlayn"></div>
+
         </div>
 
     </center>

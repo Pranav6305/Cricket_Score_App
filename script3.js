@@ -191,34 +191,85 @@ function openPopup() {
     document.getElementById("overlay").style.display = "block";
 }
 
+function openPopupn() {
+    document.getElementById("popupn").style.display = "block";
+    document.getElementById("overlayn").style.display = "block";
+}
+
 function closePopup() {
     var wide = 0;
-    wide=parseInt(document.getElementById("val").value);
-    if (wide%2==0){
+    wide = parseInt(document.getElementById("val").value);
+    if (wide % 2 == 0) {
+        wide=wide+1;
+        runs += wide;
+        total = runs;
+    } else {
+        if (flag === 0) {
+            flag = 1;
+        } else {
+            flag = 0;
+        }
+        wide=wide+1;
         runs += wide;
         total = runs;
     }
-    if (wide%2==1){
-        if (flag===0){
-            flag=1;
-        }
-        else{
-            flag=0;
-        }
-        runs += wide;
-        total = runs;
+    if (bflag === 0) {
+        bstrun += wide;
+    } 
+    else if (bflag === 1) {
+        bnstrun += wide;
     }
-    if(bflag === 0){
-        wide=wide+1;
-        bstrun+=wide;
-    }
-    else if(bflag === 1){
-        wide=wide+1;
-         bnstrun+=wide;
-     }
     document.getElementById("popup").style.display = "none";
     document.getElementById("overlay").style.display = "none";
-    document.getElementById("runs").innerHTML = total+1;
+    document.getElementById("runs").innerHTML = total;
     document.getElementById("bst").innerHTML = bstwkt + "-" + bstrun;
     document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
+}
+
+function noballPopup() {
+    var nb = 0;
+    nb = parseInt(document.getElementById("n").value);
+    if (nb % 2 == 0) {
+        if (flag === 0) {
+            st+=nb;
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nst+=nb;
+            nstb+=1;
+            flag = 0;
+        }
+        nb=nb+1;
+        runs += nb;
+        total = runs;
+    } 
+    else {
+        if (flag === 0) {
+            st+=nb;
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nst+=nb;
+            nstb+=1;
+            flag = 0;
+        }
+        nb=nb+1;
+        runs += nb;
+        total = runs;
+    }
+    if (bflag === 0) {
+        bstrun += nb;
+    } 
+    else if (bflag === 1) {
+        bnstrun += nb;
+    }
+    document.getElementById("popupn").style.display = "none";
+    document.getElementById("overlayn").style.display = "none";
+    document.getElementById("runs").innerHTML = total;
+    document.getElementById("st").innerHTML=st + "(" + stb + ")";
+    document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
+    document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;
+    document.getElementById("bnst").innerHTML=bnstwkt + "-" + bnstrun;
 }
