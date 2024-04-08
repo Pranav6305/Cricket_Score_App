@@ -8,7 +8,6 @@
 
 <body>
     <center>
-        <br><br><br>
         <div id="scorebox">
             <h1>Score: 1st innings</h1>
             <br><br>
@@ -35,6 +34,10 @@
                 <span id="batscore">Bowler1: <span id="bst">0-0</span></span>
                 <span id="batscore">Bowler2: <span id="bnst">0-0</span></span>
             </div>
+            <br>
+            <div>
+                <span id="batscore" style="background-color: aquamarine;">Extras: <span id="ex">0</span></span>
+            </div>
 
             <br><br>
             <button type="button" onclick="score(0)" class="button">0</button>
@@ -59,8 +62,9 @@
                     <tr>
                         <h1>Wide!!</h1>
                         <br><br>
+                        <span><h2>1 + </h2> </span>
                         <td>
-                            <input type="text" placeholder="Runs:" id="val" style="width:80px;height:50px;text-align: center;">
+                            <input type="text" placeholder="Runs:" id="val" style="width:70px;height:40px;text-align: center;padding:10px;font-size: 25px;">
                         </td>
                     </tr>
                 </form>
@@ -73,10 +77,12 @@
                 <form>
                     <tr>
                         <h1>No Ball!!</h1>
+                        <br>
                         <h1>Free Hit!!</h1>
                         <br><br>
+                        <span><h2>1 + </h2> </span>
                         <td>
-                            <input type="text" placeholder="Runs:" id="n" style="width:80px;height:50px;text-align: center;">
+                            <input type="text" placeholder="Runs:" id="n" style="width:70px;height:40px;text-align: center;padding:10px;font-size: 25px;">
                         </td>
                     </tr>
                 </form>

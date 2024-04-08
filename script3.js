@@ -1,4 +1,4 @@
-var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0, st = 0, flag = 0, nst = 0, bstwkt = 0, bnstwkt = 0, bstrun = 0, bnstrun = 0, bflag = 0,stb=0,nstb=0;
+var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0, st = 0, flag = 0, nst = 0, bstwkt = 0, bnstwkt = 0, bstrun = 0, bnstrun = 0, bflag = 0,stb=0,nstb=0,extras=0;
 var bat_team = localStorage.getItem('bat');
 document.getElementById("bteam").textContent = bat_team;
 
@@ -117,6 +117,7 @@ function score(value) {
         }
     }
     document.getElementById("runs").innerHTML = total;
+    document.getElementById("ex").innerHTML = extras;
     document.getElementById("Overs").innerHTML = overs + "." + balls;
     document.getElementById("st").innerHTML=st + "(" + stb + ")";
     document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
@@ -178,6 +179,7 @@ function wicket(out) {
     }
     
     document.getElementById("runs").innerHTML = runs;
+    document.getElementById("ex").innerHTML = extras;
     document.getElementById("wicket").innerHTML = wickets;
     document.getElementById("Overs").innerHTML = overs + "." + balls;
     document.getElementById("st").innerHTML=st + "(" + stb + ")";
@@ -203,7 +205,9 @@ function closePopup() {
         wide=wide+1;
         runs += wide;
         total = runs;
-    } else {
+        extras+=wide;
+    } 
+    else {
         if (flag === 0) {
             flag = 1;
         } else {
@@ -212,6 +216,7 @@ function closePopup() {
         wide=wide+1;
         runs += wide;
         total = runs;
+        extras+=wide;
     }
     if (bflag === 0) {
         bstrun += wide;
@@ -222,6 +227,7 @@ function closePopup() {
     document.getElementById("popup").style.display = "none";
     document.getElementById("overlay").style.display = "none";
     document.getElementById("runs").innerHTML = total;
+    document.getElementById("ex").innerHTML = extras;
     document.getElementById("bst").innerHTML = bstwkt + "-" + bstrun;
     document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
 }
@@ -243,6 +249,7 @@ function noballPopup() {
         nb=nb+1;
         runs += nb;
         total = runs;
+        extras+=nb;
     } 
     else {
         if (flag === 0) {
@@ -258,6 +265,7 @@ function noballPopup() {
         nb=nb+1;
         runs += nb;
         total = runs;
+        extras+=nb;
     }
     if (bflag === 0) {
         bstrun += nb;
@@ -268,6 +276,7 @@ function noballPopup() {
     document.getElementById("popupn").style.display = "none";
     document.getElementById("overlayn").style.display = "none";
     document.getElementById("runs").innerHTML = total;
+    document.getElementById("ex").innerHTML = extras;
     document.getElementById("st").innerHTML=st + "(" + stb + ")";
     document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
     document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;
