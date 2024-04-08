@@ -7,20 +7,6 @@ function score(value) {
     if (balls === 5) {
         if (wickets === 10) {
             runs = total;
-            if(flag === 0){
-                stb+=1;
-            }
-            else{
-                nstb+=1;
-            }
-            if(bflag === 0){
-                bstwkt+=1;
-                bflag=-1;
-            }
-            else if(bflag === 1){
-                bnstwkt+=1;
-                bflag=-1;
-            }
         }
         else {
             if (flag==0){
@@ -69,20 +55,6 @@ function score(value) {
     else {
         if (wickets === 10) {
             runs = total;
-            if(flag === 0){
-                stb+=1;
-            }
-            else{
-                nstb+=1;
-            }
-            if(bflag === 0){
-                bstwkt+=1;
-                bflag=-1;
-            }
-            else if(bflag === 1){
-                bnstwkt+=1;
-                bflag=-1;
-            }
         }
         else {
             if (flag==0){
