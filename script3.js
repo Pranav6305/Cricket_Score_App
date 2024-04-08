@@ -170,14 +170,25 @@ function openPopupn() {
     document.getElementById("overlayn").style.display = "block";
 }
 
+function openPopupb() {
+    document.getElementById("popupb").style.display = "block";
+    document.getElementById("overlayb").style.display = "block";
+}
+
+function openPopuplb() {
+    document.getElementById("popuplb").style.display = "block";
+    document.getElementById("overlaylb").style.display = "block";
+}
+
 function closePopup() {
-    var wide = 0;
+    var wide = 0,cwide=0;
     wide = parseInt(document.getElementById("val").value);
     if (wide % 2 == 0) {
         wide=wide+1;
         runs += wide;
         total = runs;
         extras+=wide;
+        cwide++;
     } 
     else {
         if (flag === 0) {
@@ -189,6 +200,7 @@ function closePopup() {
         runs += wide;
         total = runs;
         extras+=wide;
+        cwide++;
     }
     if (bflag === 0) {
         bstrun += wide;
@@ -200,13 +212,13 @@ function closePopup() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("runs").innerHTML = total;
     document.getElementById("ex").innerHTML = extras;
-    document.getElementById("wides").innerHTML = wide;
+    document.getElementById("wides").innerHTML = cwide;
     document.getElementById("bst").innerHTML = bstwkt + "-" + bstrun;
     document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
 }
 
 function noballPopup() {
-    var nb = 0;
+    var nb = 0,cnb=0;
     nb = parseInt(document.getElementById("n").value);
     if (nb % 2 == 0) {
         if (flag === 0) {
@@ -222,7 +234,8 @@ function noballPopup() {
         nb=nb+1;
         runs += nb;
         total = runs;
-        extras+=nb;
+        extras+=1;
+        cnb++;
     } 
     else {
         if (flag === 0) {
@@ -238,7 +251,8 @@ function noballPopup() {
         nb=nb+1;
         runs += nb;
         total = runs;
-        extras+=nb;
+        extras+=1;
+        cnb++;
     }
     if (bflag === 0) {
         bstrun += nb;
@@ -250,7 +264,95 @@ function noballPopup() {
     document.getElementById("overlayn").style.display = "none";
     document.getElementById("runs").innerHTML = total;
     document.getElementById("ex").innerHTML = extras;
-    document.getElementById("noballs").innerHTML = nb;
+    document.getElementById("noballs").innerHTML = cnb;
+    document.getElementById("st").innerHTML=st + "(" + stb + ")";
+    document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
+    document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;
+    document.getElementById("bnst").innerHTML=bnstwkt + "-" + bnstrun;
+}
+
+function byesPopup() {
+    var byes = 0;
+    byes = parseInt(document.getElementById("b").value);
+    if (byes % 2 == 0) {
+        if (flag === 0) {
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nstb+=1;
+            flag = 0;
+        }
+        runs += byes;
+        total = runs;
+        extras+=byes;
+        balls = (balls + 1) % 6;
+    } 
+    else {
+        if (flag === 0) {
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nstb+=1;
+            flag = 0;
+        }
+        runs += byes;
+        total = runs;
+        extras+=byes;
+        balls = (balls + 1) % 6;
+    }
+    document.getElementById("popupb").style.display = "none";
+    document.getElementById("overlayb").style.display = "none";
+    document.getElementById("runs").innerHTML = total;
+    document.getElementById("wicket").innerHTML = wickets;
+    document.getElementById("Overs").innerHTML = overs + "." + balls;
+    document.getElementById("ex").innerHTML = extras;
+    document.getElementById("by").innerHTML = byes;
+    document.getElementById("st").innerHTML=st + "(" + stb + ")";
+    document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
+    document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;
+    document.getElementById("bnst").innerHTML=bnstwkt + "-" + bnstrun;
+}
+
+function legbyesPopup() {
+    var lbyes = 0;
+    lbyes = parseInt(document.getElementById("lb").value);
+    if (lbyes % 2 == 0) {
+        if (flag === 0) {
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nstb+=1;
+            flag = 0;
+        }
+        runs += lbyes;
+        total = runs;
+        extras+=lbyes;
+        balls = (balls + 1) % 6;
+    } 
+    else {
+        if (flag === 0) {
+            stb+=1;
+            flag = 1;
+        } 
+        else {
+            nstb+=1;
+            flag = 0;
+        }
+        runs += lbyes;
+        total = runs;
+        extras+=lbyes;
+        balls = (balls + 1) % 6;
+    }
+    document.getElementById("popuplb").style.display = "none";
+    document.getElementById("overlaylb").style.display = "none";
+    document.getElementById("runs").innerHTML = total;
+    document.getElementById("wicket").innerHTML = wickets;
+    document.getElementById("Overs").innerHTML = overs + "." + balls;
+    document.getElementById("ex").innerHTML = extras;
+    document.getElementById("leg").innerHTML = lbyes;
     document.getElementById("st").innerHTML=st + "(" + stb + ")";
     document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
     document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;

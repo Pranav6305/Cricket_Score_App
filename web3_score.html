@@ -36,7 +36,8 @@
             </div>
             <br>
             <div>
-                <span id="batscore" style="background-color: aquamarine;padding: 15px;padding-top: 10px;">Extras: <span id="ex">0</span> <br><span> wd: <span id="wides">0</span></span> <span>nb: <span id="noballs">0</span></span> </span>    
+                <span id="batscore" style="background-color: aquamarine;padding: 15px;padding-top: 10px;width:250px;">Extras: <span id="ex">0</span> <br><span> wd: <span id="wides">0</span></span> <span>nb: <span id="noballs">0</span></span> <span>byes: <span id="by">0</span></span> <span>leg-byes: <span id="leg">0</span></span></span>    
+                
             </div>
 
             <br><br>
@@ -53,8 +54,8 @@
             <!-- Extras -->
             <button type="button" onclick="openPopup()" class="button" style="background-color: darkkhaki;">wd</button>
             <button type="button" onclick="openPopupn()" class="button" style="background-color: darkkhaki;">nb</button>
-            <button type="button" class="button" style="background-color: darkkhaki;">lb</button>
-            <button type="button" class="button" style="background-color: darkkhaki;">by</button>
+            <button type="button" onclick="openPopuplb()" class="button" style="background-color: darkkhaki;">lb</button>
+            <button type="button" onclick="openPopupb()" class="button" style="background-color: darkkhaki;">by</button>
             <br><br>
 
             <div id="popup" class="popup">
@@ -90,6 +91,36 @@
                 <button onclick="noballPopup()">proceed</button>
             </div>
             <div id="overlayn" class="overlayn"></div>
+
+            <div id="popupb" class="popupb">
+                <form>
+                    <tr>
+                        <h1>Byes</h1>
+                        <br><br>
+                        <td>
+                            <input type="text" placeholder="Runs:" id="b" style="width:70px;height:40px;text-align: center;padding:10px;font-size: 25px;">
+                        </td>
+                    </tr>
+                </form>
+                <br>
+                <button onclick="byesPopup()">proceed</button>
+            </div>
+            <div id="overlayb" class="overlayb"></div>
+
+            <div id="popuplb" class="popuplb">
+                <form>
+                    <tr>
+                        <h1>Leg Byes</h1>
+                        <br><br>
+                        <td>
+                            <input type="text" placeholder="Runs:" id="lb" style="width:70px;height:40px;text-align: center;padding:10px;font-size: 25px;">
+                        </td>
+                    </tr>
+                </form>
+                <br>
+                <button onclick="legbyesPopup()">proceed</button>
+            </div>
+            <div id="overlaylb" class="overlaylb"></div>
 
         </div>
 
