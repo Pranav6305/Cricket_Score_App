@@ -200,6 +200,7 @@ function closePopup() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("runs").innerHTML = total;
     document.getElementById("ex").innerHTML = extras;
+    document.getElementById("wides").innerHTML = wide;
     document.getElementById("bst").innerHTML = bstwkt + "-" + bstrun;
     document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
 }
@@ -249,6 +250,7 @@ function noballPopup() {
     document.getElementById("overlayn").style.display = "none";
     document.getElementById("runs").innerHTML = total;
     document.getElementById("ex").innerHTML = extras;
+    document.getElementById("noballs").innerHTML = nb;
     document.getElementById("st").innerHTML=st + "(" + stb + ")";
     document.getElementById("nst").innerHTML=nst + "(" + nstb + ")";
     document.getElementById("bst").innerHTML=bstwkt + "-" + bstrun;
