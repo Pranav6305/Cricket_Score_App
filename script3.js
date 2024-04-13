@@ -1,10 +1,11 @@
 var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0, st = 0, flag = 0, nst = 0, bstwkt = 0, bnstwkt = 0, bstrun = 0, bnstrun = 0, bflag = 0,stb=0,nstb=0,extras=0;
 var bat_team = localStorage.getItem('bat');
 document.getElementById("bteam").textContent = bat_team;
-
+var ov=localStorage.getItem('ov');
 
 function score(value) {
     if (balls === 5) {
+        btemp=5;
         if (wickets === 10) {
             runs = total;
         }
@@ -88,6 +89,7 @@ function score(value) {
             balls = (balls + 1) % 6;
         }
     }
+
     document.getElementById("runs").innerHTML = total;
     document.getElementById("ex").innerHTML = extras;
     document.getElementById("Overs").innerHTML = overs + "." + balls;
@@ -180,7 +182,7 @@ function openPopuplb() {
     document.getElementById("overlaylb").style.display = "block";
 }
 
-function closePopup() {
+function widePopup() {
     var wide = 0,cwide=0;
     wide = parseInt(document.getElementById("val").value);
     if (wide % 2 == 0) {
