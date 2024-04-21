@@ -1,36 +1,48 @@
 <html>
-    <head>
-        <body style="background-color: lightskyblue;">
+  <head>
+    <body style="background-color: lightskyblue">
+      <center>
+        <div>
+          <form>
+            <tr>
+              <h2>No. of Players in each team</h2>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Enter"
+                  style="text-align: center; padding: 5px"
+                />
+              </td>
+            </tr>
+          </form>
+        </div>
+        <h1>Playing 11's</h1>
+      </center>
+      <br />
 
-            <center>
-                <div>
-                    <form>
-                        <tr>
-                            <h2>No. of Players in each team</h2>
-                            <td>
-                                <input type="text" placeholder="Enter" style="text-align: center;padding: 5px;">
-                            </td>
-                        </tr>
-                    </form>
-                </div>
-                <h1>Playing 11's</h1>
-            </center>
-            <br>
+      <span
+        style="
+          font-size: 30px;
+          word-spacing: 600px;
+          margin: 365px;
+          color: black;
+        "
+      >
+        <span id="s1"></span> <span id="s2"></span>
+      </span>
+      <br /><br />
+      <center>
+        <button onclick='window.location.href="web3_score.html"'>
+          Proceed
+        </button>
+      </center>
 
-            <span style="font-size: 30px;word-spacing: 600px; margin:365px;color: black;">
-                <span id="s1"></span> <span id="s2"></span>
-            </span>
-            <br><br>
-            <center>
-                <button onclick='window.location.href="web3_score.html"'>Proceed</button>
-            </center>
-
-            <script>
-                var team1=localStorage.getItem('team1');
-                var team2=localStorage.getItem('team2');
-                document.getElementById("s1").textContent=team1;
-                document.getElementById("s2").textContent=team2;
-            </script>
-        </body>
-    </head>
+      <script>
+        var team1 = localStorage.getItem("team1");
+        var team2 = localStorage.getItem("team2");
+        document.getElementById("s1").textContent = team1;
+        document.getElementById("s2").textContent = team2;
+      </script>
+    </body>
+  </head>
 </html>

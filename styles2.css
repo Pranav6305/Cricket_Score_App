@@ -1,4 +1,4 @@
-body{
+body {
     background-color: lightgreen;
 }
 
@@ -7,7 +7,7 @@ body{
     border: 2px solid black;
     padding: 20px;
     border-radius: 15px;
-    width: 400px;
+    width: auto;
     height: auto;
 }
 
@@ -27,17 +27,17 @@ body{
     font-size: 25px;
 }
 
-span{
-    display:inline-block;
+span {
+    display: inline-block;
     vertical-align: top;
 }
 
-h1{
-    display:inline;
-    margin:0; 
+h1 {
+    display: inline;
+    margin: 0;
 }
 
-#batscore{
+#batscore {
     background-color: orange;
     border: 2px solid black;
     height: 30px;
@@ -47,7 +47,7 @@ h1{
     font-size: 17px;
 }
 
-#bteam{
+#bteam {
     background-color: yellow;
     border: 2px solid black;
     height: 30px;
