@@ -109,6 +109,8 @@ function wicket(out) {
     if (overs == totalovers) {
         flag = -1;
         bflag = -1;
+        document.getElementById("popupwk").style.display = "none";
+        document.getElementById("overlaywk").style.display = "none";
     }
     if (out === -1 && wickets != 10) {
         if (balls === 5 && flag != -1) {
@@ -164,6 +166,8 @@ function wicket(out) {
     }
 
     if (flag === 0 || flag === 1) {
+        document.getElementById("popupwk").style.display = "none";
+        document.getElementById("overlaywk").style.display = "none";
         document.getElementById("runs").innerHTML = runs;
         document.getElementById("ex").innerHTML = extras;
         document.getElementById("wicket").innerHTML = wickets;
@@ -193,6 +197,16 @@ function openPopupb() {
 function openPopuplb() {
     document.getElementById("popuplb").style.display = "block";
     document.getElementById("overlaylb").style.display = "block";
+}
+
+function openPopupwk() {
+    document.getElementById("popupwk").style.display = "block";
+    document.getElementById("overlaywk").style.display = "block";
+}
+
+function closePopupwk() {
+    document.getElementById("popupwk").style.display = "none";
+    document.getElementById("overlaywk").style.display = "none";
 }
 
 
