@@ -106,9 +106,10 @@ function score(value) {
     }
 }
 function wicket(out) {
-   if(overs===totalovers){
+   if(overs == totalovers){
         flag = -1;
         bflag = -1;
+        closePopupwk();
     }
     if (out === -1 && wickets != 10) {
         if (balls === 5 && flag!=-1) {
@@ -213,6 +214,16 @@ function closePopupwk() {
 function closePopup() {
     var wide = 0,cwide=0;
     wide = parseInt(document.getElementById("val").value);
+    if(wickets===10){
+        flag = -1;
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+    if(overs == totalovers){
+        flag = -1;
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
     if (wide % 2 == 0) {
         wide=wide+1;
         runs += wide;
@@ -252,9 +263,17 @@ function closePopup() {
 function noballPopup() {
     var nb = 0,cnb=0;
     nb = parseInt(document.getElementById("n").value);
-   if(overs===totalovers){
+   if(overs == totalovers){
         flag=-1;
         bflag=-1;
+        document.getElementById("popupn").style.display = "none";
+        document.getElementById("overlayn").style.display = "none";
+    }
+    if(wickets===10){
+        flag=-1;
+        bflag=-1;
+        document.getElementById("popupn").style.display = "none";
+        document.getElementById("overlayn").style.display = "none";
     }
     if (nb % 2 == 0) {
         if (flag === 0) {
@@ -310,9 +329,17 @@ function noballPopup() {
 function byesPopup() {
     var byes = 0;
     byes = parseInt(document.getElementById("b").value);
-   if(overs===totalovers){
+   if(overs == totalovers){
         flag=-1;
         bflag=-1;
+        document.getElementById("popupb").style.display = "none";
+        document.getElementById("overlayb").style.display = "none";
+    }
+    if(wickets===10){
+        flag=-1;
+        bflag=-1;
+        document.getElementById("popupb").style.display = "none";
+        document.getElementById("overlayb").style.display = "none";
     }
     if (byes % 2 == 0) {
         if (flag === 0) {
@@ -358,9 +385,17 @@ function byesPopup() {
 function legbyesPopup() {
     var lbyes = 0;
     lbyes = parseInt(document.getElementById("lb").value);
-   if(overs===totalovers){
+   if(overs == totalovers){
         flag=-1;
         bflag=-1;
+        document.getElementById("popuplb").style.display = "none";
+        document.getElementById("overlaylb").style.display = "none";
+    }
+    if(wickets===10){
+        flag=-1;
+        bflag=-1;
+        document.getElementById("popuplb").style.display = "none";
+        document.getElementById("overlaylb").style.display = "none";
     }
     if (lbyes % 2 == 0) {
         if (flag === 0) {
