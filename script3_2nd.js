@@ -1,15 +1,15 @@
 var runs = 0, balls = 0, overs = 0, wickets = 0, total = 0, st = 0, flag = 0, nst = 0, bstwkt = 0, bnstwkt = 0, bstrun = 0, bnstrun = 0, bflag = 0, stb = 0, nstb = 0, extras = 0;
-var bat_team = localStorage.getItem('bat');
-document.getElementById("bteam").textContent = bat_team;
+var bowl_team = localStorage.getItem('bowl');
+document.getElementById("boteam").textContent = bowl_team;
 var totalovers = localStorage.getItem('overs');
-let ball_arr = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2];
-let i = -1;
+
 
 function score(value) {
     if (overs == totalovers) {
         flag = -1;
         bflag = -1;
     }
+
 
     if (balls === 5 && flag != -1) {
         if (wickets === 10) {
@@ -93,56 +93,8 @@ function score(value) {
             runs += value;
             total = runs;
             balls = (balls + 1) % 6;
-
         }
     }
-    i++;
-    ball_arr[i] = value;
-    if (flag === 0 || flag === 1) {
-        document.getElementById("runs").innerHTML = total;
-        document.getElementById("ex").innerHTML = extras;
-        document.getElementById("Overs").innerHTML = overs + "." + balls + "(" + totalovers + ")";
-        document.getElementById("st").innerHTML = st + "(" + stb + ")";
-        document.getElementById("nst").innerHTML = nst + "(" + nstb + ")";
-        document.getElementById("bst").innerHTML = bstwkt + "-" + bstrun;
-        document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
-    }
-
-    if (i === 12) {
-        i = -1;
-        ball_arr = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2];
-    }
-}
-// Wicket not updated
-function undo() {
-    if (ball_arr[i] % 2 == 1 && flag == 1) {
-        flag = 0;
-    }
-    else if (ball_arr[i] % 2 == 1 && flag == 0) {
-        flag = 1;
-    }
-    if (i < 0) {
-        alert("Cannot undo further");
-        return;
-    }
-
-    if (ball_arr[i] == -1 && wickets > 0) {
-        wickets = wickets - 1;
-        ball_arr[i] = -2;
-    } else {
-        total = total - ball_arr[i];
-        runs = runs - ball_arr[i];
-        ball_arr[i] = -2;
-    }
-
-    if (balls == 0 && overs > 0) {
-        balls = 5;
-        overs--;
-    } else {
-        balls = (balls - 1 + 5) % 5;
-    }
-
-    i--;
     if (flag === 0 || flag === 1) {
         document.getElementById("runs").innerHTML = total;
         document.getElementById("ex").innerHTML = extras;
@@ -153,7 +105,6 @@ function undo() {
         document.getElementById("bnst").innerHTML = bnstwkt + "-" + bnstrun;
     }
 }
-
 function wicket(out) {
     if (overs == totalovers) {
         flag = -1;
@@ -161,12 +112,6 @@ function wicket(out) {
         document.getElementById("popupwk").style.display = "none";
         document.getElementById("overlaywk").style.display = "none";
     }
-
-    if (i >= 12) {
-        i = -1;
-        ball_arr = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2];
-    }
-
     if (out === -1 && wickets != 10) {
         if (balls === 5 && flag != -1) {
             balls = 0;
@@ -219,8 +164,7 @@ function wicket(out) {
     else if (out === -1 && wickets === 10) {
         bflag = -1;
     }
-    i++;
-    ball_arr[i] = -1;
+
     if (flag === 0 || flag === 1) {
         document.getElementById("popupwk").style.display = "none";
         document.getElementById("overlaywk").style.display = "none";
@@ -260,19 +204,9 @@ function openPopupwk() {
     document.getElementById("overlaywk").style.display = "block";
 }
 
-function openPopupend() {
-    document.getElementById("popupend").style.display = "block";
-    document.getElementById("overlayend").style.display = "block";
-}
-
 function closePopupwk() {
     document.getElementById("popupwk").style.display = "none";
     document.getElementById("overlaywk").style.display = "none";
-}
-
-function closePopupend() {
-    document.getElementById("popupend").style.display = "none";
-    document.getElementById("overlayend").style.display = "none";
 }
 
 
@@ -400,17 +334,6 @@ function byesPopup() {
         document.getElementById("popupb").style.display = "none";
         document.getElementById("overlayb").style.display = "none";
     }
-
-    if (i < 12) {
-        ball_arr[i] = value;
-        i++;
-    }
-
-    if (i >= 12) {
-        i = 0;
-        ball_arr = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2];
-    }
-
     if (wickets === 10) {
         flag = -1;
         bflag = -1;
@@ -467,17 +390,6 @@ function legbyesPopup() {
         document.getElementById("popuplb").style.display = "none";
         document.getElementById("overlaylb").style.display = "none";
     }
-
-    if (i < 12) {
-        ball_arr[i] = value;
-        i++;
-    }
-
-    if (i >= 12) {
-        i = 0;
-        ball_arr = [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2];
-    }
-
     if (wickets === 10) {
         flag = -1;
         bflag = -1;
